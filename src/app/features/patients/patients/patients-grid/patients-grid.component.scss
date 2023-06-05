@@ -1,0 +1,24 @@
+:host {
+  display: block;
+
+  .icon {
+    color: #000;
+    transition: color .3s ease;
+
+    &:hover {
+      color: gold;
+    }
+  }
+
+  .loader {
+    margin: 0 auto;
+  }
+
+  .table {
+    width: 100%;
+
+    .cdk-column-favourite > .icon {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,119 +1,119 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { TranslateModule } from "@ngx-translate/core";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatButtonModule } from "@angular/material/button";
-import { MatMenuModule } from "@angular/material/menu";
-import { MatSelectModule } from "@angular/material/select";
-import { MatTabsModule } from "@angular/material/tabs";
-import { MatInputModule } from "@angular/material/input";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { MatChipsModule } from "@angular/material/chips";
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatCardModule } from "@angular/material/card";
-import { MatListModule } from "@angular/material/list";
-import { MatIconModule } from "@angular/material/icon";
-import { MatTooltipModule } from "@angular/material/tooltip";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { MatDividerModule } from "@angular/material/divider";
-import { MatSliderModule } from "@angular/material/slider";
-import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatNativeDateModule } from "@angular/material/core";
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons';
 import {
-  FontAwesomeModule,
-  FaIconLibrary
-} from "@fortawesome/angular-fontawesome";
-import {
-  faPlus,
-  faEdit,
-  faTrash,
-  faTimes,
-  faCaretUp,
+  faBook,
   faCaretDown,
+  faCaretUp,
+  faCheck,
+  faEdit,
   faExclamationTriangle,
   faFilter,
-  faTasks,
-  faCheck,
-  faSquare,
   faLanguage,
-  faPaintBrush,
   faLightbulb,
-  faWindowMaximize,
+  faPaintBrush,
+  faPlus,
+  faSquare,
   faStream,
-  faBook
-} from "@fortawesome/free-solid-svg-icons";
-import { faMediumM, faGithub } from "@fortawesome/free-brands-svg-icons";
+  faTasks,
+  faTimes,
+  faTrash,
+  faWindowMaximize,
+} from '@fortawesome/free-solid-svg-icons';
+import { TranslateModule } from '@ngx-translate/core';
+import { BigInputActionComponent } from './components/big-input/big-input-action/big-input-action.component';
 
-import { BigInputComponent } from "./components/big-input/big-input/big-input.component";
-import { BigInputActionComponent } from "./components/big-input/big-input-action/big-input-action.component";
-import { RtlSupportDirective } from "./directives/rtl-support/rtl-support.directive";
+import { BigInputComponent } from './components/big-input/big-input/big-input.component';
+import { RtlSupportDirective } from './directives/rtl-support/rtl-support.directive';
+import { FilterByPipe } from './pipes/filter-by.pipe';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
+            imports: [
+              CommonModule,
+              FormsModule,
 
-    TranslateModule,
+              TranslateModule,
 
-    MatButtonModule,
-    MatSelectModule,
-    MatTabsModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatChipsModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatListModule,
-    MatMenuModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatSnackBarModule,
-    MatSlideToggleModule,
-    MatDividerModule,
+              MatButtonModule,
+              MatSelectModule,
+              MatTabsModule,
+              MatInputModule,
+              MatProgressSpinnerModule,
+              MatChipsModule,
+              MatCardModule,
+              MatCheckboxModule,
+              MatListModule,
+              MatMenuModule,
+              MatIconModule,
+              MatTooltipModule,
+              MatSnackBarModule,
+              MatSlideToggleModule,
+              MatDividerModule,
 
-    FontAwesomeModule
-  ],
-  declarations: [
-    BigInputComponent,
-    BigInputActionComponent,
-    RtlSupportDirective
-  ],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
+              FontAwesomeModule,
+            ],
+            declarations: [
+              BigInputComponent,
+              BigInputActionComponent,
+              RtlSupportDirective,
+              FilterByPipe,
+            ],
+            exports: [
+              CommonModule,
+              FormsModule,
+              ReactiveFormsModule,
 
-    TranslateModule,
+              TranslateModule,
 
-    MatButtonModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatChipsModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatListModule,
-    MatSelectModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatSnackBarModule,
-    MatSlideToggleModule,
-    MatDividerModule,
-    MatSliderModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
+              MatButtonModule,
+              MatMenuModule,
+              MatTabsModule,
+              MatChipsModule,
+              MatInputModule,
+              MatProgressSpinnerModule,
+              MatCheckboxModule,
+              MatCardModule,
+              MatListModule,
+              MatSelectModule,
+              MatIconModule,
+              MatTooltipModule,
+              MatSnackBarModule,
+              MatSlideToggleModule,
+              MatDividerModule,
+              MatSliderModule,
+              MatDatepickerModule,
+              MatNativeDateModule,
 
-    FontAwesomeModule,
+              FontAwesomeModule,
 
-    BigInputComponent,
-    BigInputActionComponent,
-    RtlSupportDirective
-  ]
-})
+              BigInputComponent,
+              BigInputActionComponent,
+              RtlSupportDirective,
+              FilterByPipe,
+            ],
+          })
 export class SharedModule {
   constructor(faIconLibrary: FaIconLibrary) {
     faIconLibrary.addIcons(
@@ -135,7 +135,7 @@ export class SharedModule {
       faLightbulb,
       faWindowMaximize,
       faStream,
-      faBook
+      faBook,
     );
   }
 }

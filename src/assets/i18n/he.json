@@ -1,14 +1,13 @@
 {
   "stms.title.long": "LabOS test task",
   "stms.title.short": "LabOS",
-  
   "stms.menu.patients": "נבדקים",
   "stms.menu.examples": "דוגמאות",
   "stms.menu.orders": "הזמנות",
+  "stms.menu.favourites": "מועדפים",
   "stms.menu.login": "התחברות",
   "stms.menu.logout": "התנתקות",
   "stms.menu.settings": "הגדרות",
-
   "stms.settings.animations.elements": "בזמן ניווט אלמנטים זיזים כלפי מעלה",
   "stms.settings.animations.page": "טרנזיציה מלאה בניוט לדף",
   "stms.settings.animations.title": "אנימציות",
@@ -25,10 +24,25 @@
   "stms.settings.themes.sticky-header": "חלק עליון נצמד",
   "stms.settings.themes.title": "ערכאות נושא",
   "stms.settings.title": "הגדרות",
-
   "stms.patients.title": "נבדקים",
+  "stms.patients.table.headers.age": "Age",
+  "stms.patients.table.headers.name": "Name",
+  "stms.patients.table.headers.sex": "Sex",
+  "stms.patients.table.headers.searchedBy": "Searched By",
+  "stms.patients.table.headers.code": "Code",
+  "stms.patients.table.addToFavourites": "Add to favourites",
+  "stms.patients.table.removeFromFavourites": "Remove from favourites",
+  "stms.patients.table.searchPlaceholder": "Search favourite patients",
   "stms.patients.get-patients": "מצא נבדקים",
-
   "stms.orders.title": "הזמנות",
-  "stms.orders.get-orders": "מצא הזמנות"
+  "stms.orders.table.headers.orderName": "Order Name",
+  "stms.orders.table.headers.orderNum": "Order #",
+  "stms.orders.table.headers.facility": "Facility",
+  "stms.orders.table.headers.physician": "Physician",
+  "stms.orders.table.headers.status": "Status",
+  "stms.orders.table.addToFavourites": "Add to favourites",
+  "stms.orders.table.removeFromFavourites": "Remove from favourites",
+  "stms.orders.table.searchPlaceholder": "Search favourite orders",
+  "stms.orders.get-orders": "מצא הזמנות",
+  "stms.table.noData": "Currently no data available"
 }

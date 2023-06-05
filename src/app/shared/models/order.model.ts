@@ -99,4 +99,12 @@ export interface Order {
   exceptionServices?: any[];
   exceptions?: any[];
   microOrganisms?: string;
+  inFavourites?: boolean;
+}
+
+export interface OrdersState {
+  items: Order[],
+  loading: boolean,
+  error: null | string,
+  favourites: Order[],
 }

@@ -2,9 +2,13 @@
   <div rtl>
     <h1 class="main-heading">{{ 'stms.patients.title' | translate }}</h1>
     <div class="actions">
-      <a mat-raised-button class="actions-main" color="primary">
+      <button (click)="getPatients()"
+              [disabled]="patientsLoading$ | async"
+              class="actions-main" color="primary" mat-raised-button>
         {{ 'stms.patients.get-patients' | translate }}
-      </a>
+      </button>
+      <st-patients-grid [dataSource]="patientsList$ | async"
+                        [loading]="patientsLoading$ | async"></st-patients-grid>
       <!--
         Endpoint to fetch data: https://api.mocki.io/v2/51597ef3
        -->

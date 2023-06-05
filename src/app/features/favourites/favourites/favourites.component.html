@@ -1,0 +1,17 @@
+<div class="container">
+  <div rtl>
+    <section>
+      <h2>Favourite Patients</h2>
+      <st-patients-grid [dataSource]="patientsFavourites$ | async"
+                        [showSearch]="true"></st-patients-grid>
+    </section>
+
+    <div class="separator"></div>
+
+    <section>
+      <h2>Favourite Orders</h2>
+      <st-orders-grid [dataSource]="ordersFavourites$ | async"
+                      [showSearch]="true"></st-orders-grid>
+    </section>
+  </div>
+</div>

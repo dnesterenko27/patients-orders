@@ -57,4 +57,12 @@ export interface Patient {
   height?: string;
   followUpPatient?: any;
   isHospitalized?: boolean;
+  inFavourites?: boolean;
+}
+
+export interface PatientsState {
+  items: Patient[],
+  loading: boolean,
+  error: null | string,
+  favourites: Patient[],
 }

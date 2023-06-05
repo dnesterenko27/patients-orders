@@ -1,44 +1,45 @@
-import browser from "browser-detect";
-import { Component, OnInit } from "@angular/core";
-import { Store, select } from "@ngrx/store";
-import { Observable } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import browser from 'browser-detect';
+import { Observable } from 'rxjs';
 
-import { environment as env } from "../../environments/environment";
+import { environment as env } from '../../environments/environment';
 
 import {
   authLogin,
   authLogout,
-  routeAnimations,
   LocalStorageService,
+  routeAnimations,
+  selectEffectiveTheme,
   selectIsAuthenticated,
-  selectSettingsStickyHeader,
   selectSettingsLanguage,
-  selectEffectiveTheme
-} from "../core/core.module";
+  selectSettingsStickyHeader,
+} from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
-  actionSettingsChangeLanguage
-} from "../core/settings/settings.actions";
+  actionSettingsChangeLanguage,
+} from '../core/settings/settings.actions';
 
 @Component({
-  selector: "st-root",
-  templateUrl: "./app-root.component.html",
-  styleUrls: ["./app-root.component.scss"],
-  animations: [routeAnimations]
-})
+             selector: 'st-root',
+             templateUrl: './app-root.component.html',
+             styleUrls: ['./app-root.component.scss'],
+             animations: [routeAnimations],
+           })
 export class AppRootComponent implements OnInit {
   isProd = env.production;
   envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
-  languages = ["en", "he"];
+  languages = ['en', 'he'];
   navItems = [
-    { link: "patients", label: "stms.menu.patients" },
-    { link: "orders", label: "stms.menu.orders" }
+    { link: 'patients', label: 'stms.menu.patients' },
+    { link: 'orders', label: 'stms.menu.orders' },
+    { link: 'favourites', label: 'stms.menu.favourites' },
   ];
   navigationSideMenu = [
     ...this.navItems,
-    { link: "settings", label: "stms.menu.settings" }
+    { link: 'settings', label: 'stms.menu.settings' },
   ];
 
   isAuthenticated$: Observable<boolean>;
@@ -48,11 +49,12 @@ export class AppRootComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private storageService: LocalStorageService
-  ) {}
+    private storageService: LocalStorageService,
+  ) {
+  }
 
   private static isIEorEdgeOrSafari() {
-    return ["ie", "edge", "safari"].includes(browser().name);
+    return ['ie', 'edge', 'safari'].includes(browser().name);
   }
 
   ngOnInit(): void {
@@ -60,8 +62,8 @@ export class AppRootComponent implements OnInit {
     if (AppRootComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
         actionSettingsChangeAnimationsPageDisabled({
-          pageAnimationsDisabled: true
-        })
+                                                     pageAnimationsDisabled: true,
+                                                   }),
       );
     }
 

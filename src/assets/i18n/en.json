@@ -1,14 +1,13 @@
 {
   "stms.title.long": "LabOS test task",
   "stms.title.short": "LabOS",
-  
   "stms.menu.patients": "Patients",
   "stms.menu.examples": "Examples",
   "stms.menu.orders": "Orders",
+  "stms.menu.favourites": "Favourites",
   "stms.menu.login": "Sign in",
   "stms.menu.logout": "Logout",
   "stms.menu.settings": "Settings",
-
   "stms.settings.animations.elements": "Navigation page elements slide up",
   "stms.settings.animations.page": "Navigation whole page transition",
   "stms.settings.animations.title": "Animations",
@@ -25,10 +24,25 @@
   "stms.settings.themes.sticky-header": "Sticky header",
   "stms.settings.themes.title": "Themes",
   "stms.settings.title": "Settings",
-
   "stms.patients.title": "Patients",
+  "stms.patients.table.headers.age": "Age",
+  "stms.patients.table.headers.name": "Name",
+  "stms.patients.table.headers.sex": "Sex",
+  "stms.patients.table.headers.searchedBy": "Searched By",
+  "stms.patients.table.headers.code": "Code",
+  "stms.patients.table.addToFavourites": "Add to favourites",
+  "stms.patients.table.removeFromFavourites": "Remove from favourites",
+  "stms.patients.table.searchPlaceholder": "Search favourite patients",
   "stms.patients.get-patients": "Get patients",
-
   "stms.orders.title": "Orders",
-  "stms.orders.get-orders": "Get orders"
+  "stms.orders.table.headers.orderName": "Order Name",
+  "stms.orders.table.headers.orderNum": "Order #",
+  "stms.orders.table.headers.facility": "Facility",
+  "stms.orders.table.headers.physician": "Physician",
+  "stms.orders.table.headers.status": "Status",
+  "stms.orders.table.addToFavourites": "Add to favourites",
+  "stms.orders.table.removeFromFavourites": "Remove from favourites",
+  "stms.orders.table.searchPlaceholder": "Search favourite orders",
+  "stms.orders.get-orders": "Get orders",
+  "stms.table.noData": "Currently no data available"
 }

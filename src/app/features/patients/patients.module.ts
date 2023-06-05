@@ -1,14 +1,20 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
 
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from '../../shared/shared.module';
 
-import { PatientsRoutingModule } from "./patients-routing.module";
-import { PatientsComponent } from "./patients/patients.component";
+import { PatientsRoutingModule } from './patients-routing.module';
+import { PatientsGridComponent } from './patients/patients-grid/patients-grid.component';
+import { PatientsComponent } from './patients/patients.component';
 
 @NgModule({
-  declarations: [PatientsComponent],
-  imports: [CommonModule, SharedModule, PatientsRoutingModule],
-  providers: []
-})
-export class PatientsModule {}
+            declarations: [PatientsComponent, PatientsGridComponent],
+            imports: [CommonModule, SharedModule, PatientsRoutingModule, MatTableModule],
+            providers: [],
+            exports: [
+              PatientsGridComponent,
+            ],
+          })
+export class PatientsModule {
+}

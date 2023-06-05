@@ -1,17 +1,26 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from "../../../core/core.module";
+import { AppState } from '../../../core/core.module';
+import { actionGetOrders } from '../../../core/orders/orders.actions';
+import { selectOrdersList, selectOrdersLoading } from '../../../core/orders/orders.selectors';
+import { Order } from '../../../shared/models/order.model';
 
 @Component({
-  selector: "st-orders",
-  templateUrl: "./orders.component.html",
-  styleUrls: ["./orders.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
-export class OrdersComponent implements OnInit {
-  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+             selector: 'st-orders',
+             templateUrl: './orders.component.html',
+             styleUrls: ['./orders.component.scss'],
+             changeDetection: ChangeDetectionStrategy.OnPush,
+           })
+export class OrdersComponent {
+  ordersList$: Observable<Order[]> = this.store.pipe(select(selectOrdersList));
+  ordersLoading$: Observable<boolean> = this.store.pipe(select(selectOrdersLoading));
 
-  constructor() {}
+  constructor(private store: Store<AppState>) {
+  }
 
-  ngOnInit() {}
+  getOrders(): void {
+    this.store.dispatch(actionGetOrders());
+  }
 }

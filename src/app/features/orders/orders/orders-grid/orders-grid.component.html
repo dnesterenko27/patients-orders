@@ -1,0 +1,56 @@
+<ng-container *ngIf="!loading; else loader">
+  <mat-form-field *ngIf="showSearch && dataSource.length">
+    <input [formControl]="searchControl"
+           [placeholder]="'stms.orders.table.searchPlaceholder' | translate" class="input" matInput>
+  </mat-form-field>
+  <table *ngIf="dataSource.length; else stub"
+         [dataSource]="dataSource | filterBy : 'orderName' : (searchQuery$ | async)" [trackBy]="trackByFn"
+         class="table"
+         mat-table>
+    <ng-container matColumnDef="orderName">
+      <th *matHeaderCellDef mat-header-cell>{{ 'stms.orders.table.headers.orderName' | translate }}</th>
+      <td *matCellDef="let element" mat-cell> {{element.orderName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="orderNum">
+      <th *matHeaderCellDef mat-header-cell>{{ 'stms.orders.table.headers.orderNum' | translate }}</th>
+      <td *matCellDef="let element" mat-cell> {{element.orderNum}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="facility">
+      <th *matHeaderCellDef mat-header-cell>{{ 'stms.orders.table.headers.facility' | translate }}</th>
+      <td *matCellDef="let element" mat-cell> {{element.facility?.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="physician">
+      <th *matHeaderCellDef mat-header-cell>{{ 'stms.orders.table.headers.physician' | translate }}</th>
+      <td *matCellDef="let element"
+          mat-cell> {{element.physician?.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th *matHeaderCellDef mat-header-cell>{{ 'stms.orders.table.headers.status' | translate }}</th>
+      <td *matCellDef="let element" mat-cell> {{element.status?.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="favourite">
+      <th *matHeaderCellDef mat-header-cell></th>
+      <td (click)="toggleFavourite(element)" *matCellDef="let element" mat-cell>
+        <mat-icon
+          [matTooltip]="(element.inFavourites ? 'stms.orders.table.removeFromFavourites' : 'stms.orders.table.addToFavourites') | translate"
+          class="icon">{{element.inFavourites ? 'star' : 'star_border'}}</mat-icon>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" class="table-row" mat-row></tr>
+  </table>
+</ng-container>
+
+<ng-template #loader>
+  <mat-progress-spinner class="loader" mode="indeterminate"></mat-progress-spinner>
+</ng-template>
+
+<ng-template #stub>
+  <p>{{'stms.table.noData' | translate}}</p>
+</ng-template>
